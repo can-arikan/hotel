@@ -1,0 +1,47 @@
+:root {        
+    --primary_color: #fdf7f4;
+    --secondary_color: #faa363;
+    --main_font_color: rgb(143, 113, 95);
+    --sub_font_color: rgb(182, 151, 133);
+    --flex-base: calc(100% - 5em);
+    --button-color: #796794;
+    --ring-hover-color: #db905b;
+    --button-hover-color: #5e3e8f;
+    --border-thickness: 0.14rem;
+    --border-width-medium: 2.2em;
+    --border-width-long: 2.6em;
+    --menu-button-top-bottom-gaps: 1em;
+    --menu-button-width-height: 4em;
+    --menu-size: 20em;
+    --logo-width-height: 15em;
+    --slider-width: 100%;
+    --slider-height: 50em;
+    --slider-image-width: 85em;
+    --slider-max-height: 88vh;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--primary_color);
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }  
+
+  #root {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }

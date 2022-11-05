@@ -1,0 +1,66 @@
+@import url('./root.scss');
+
+.slider {
+    position: relative;
+    display: flex;
+    width: var(--slider-width);
+    height: var(--slider-height);
+    max-height: var(--slider-max-height);
+    margin-top: -2em;
+    z-index: -1;
+
+    .arrow-holder {
+        position: absolute;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        
+        .arrow {
+            position: relative;
+            display: flex;
+            animation: arrowMovement 2s ease-in-out infinite;
+            z-index: 1;
+            height: 15em;
+            margin-left: 10%;
+            margin-bottom: 2em;
+        }
+    }
+
+    .front-label {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        .slider-label {
+            position: absolute;
+            display: flex;
+            width: var(--slider-image-width);
+            height: var(--slider-height);
+        }
+
+        .background-slider {
+            position: relative;
+            display: flex;
+
+            .mock-slider {
+                width: calc(var(--slider-image-width) - 0.2em);
+                height: calc(var(--slider-height) - 0.2em);
+            }
+        }
+    }
+
+    @keyframes arrowMovement {
+        0% {
+            transform: translateY(-1em);
+        }
+        50%{
+            transform: translateY(0em);
+        }
+        100%{
+            transform: translateY(-1em);
+        }
+    }
+}

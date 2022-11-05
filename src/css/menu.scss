@@ -1,0 +1,240 @@
+@import url('./root.scss');
+
+.menu {    
+  width: var(--flex-base);
+  display: flex;
+  flex-direction: row;
+  padding-top: 3em;
+  position: relative;
+  justify-content: space-between;
+  height: 10em !important;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: var(--menu-button-width-height);
+
+  .hidden-menu {
+    position: fixed;
+    width: var(--menu-size);
+    height: 100vh;
+    border: #796794 1px solid;
+    top: 0;
+    left: calc(-1 * var(--menu-size));
+    max-width: 45%;
+  }
+
+  .menu-logo {
+    position: relative;
+    display: flex;
+    max-width: calc(var(--menu-button-width-height) + 5em);
+    max-height: calc(var(--menu-button-width-height) + 5em);
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  .left-menu {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+
+    .menu-item-box {       
+      width: var(--menu-button-width-height);
+      height: var(--menu-button-width-height);
+      background-color: var(--button-color);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 38%);
+      animation: reserveColorChange 0.5s linear 1;
+      cursor: pointer;
+    }
+  }
+
+  .menu-item-box:hover {
+    animation: changeColor 0.5s linear 1 both;
+  }
+
+  .menu-item-box:active {
+    animation: pressButton 0.2s linear 1 both, reserveColorChange 0.2s linear 1 both;
+  }
+
+  .menu-lines {    
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: var(--menu-button-top-bottom-gaps);
+    bottom: var(--menu-button-top-bottom-gaps);
+
+    .menu-item-line-medium {    
+      border-bottom: var(--border-thickness) solid white;
+      width: var(--border-width-medium);
+    }
+
+    .menu-item-line-long {    
+      border-bottom: var(--border-thickness) solid white;
+      width: var(--border-width-long);
+    }
+  }
+
+  .menu-item:hover {
+    background-color: var(--button-hover-color);
+  }
+
+  .menu-line-rotation {
+    animation: menuRotation 0.5s ease-in-out both;
+  }
+  
+  .reverse-menu-line-rotation {
+    animation: reverseMenuRotation 0.5s ease-in-out both;
+  }
+
+  .open-hidden-menu {
+    animation: hiddenMenuOpen 0.5s 0.3s ease-in-out both;
+  }
+
+  .action-buttons {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+
+    .reservation-button {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      right: 0;
+      align-items: center;
+      box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 38%);
+      cursor: pointer;
+
+      .reservation-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: var(--secondary_color);
+        animation: reverseRingHover 0.5s linear 1 both;
+      }
+
+      .reservation-icon > img {
+        padding: 1em;
+        width: calc(var(--menu-button-width-height) - 2em);
+        height: calc(var(--menu-button-width-height) - 2em);
+      }
+
+      .reservation-text {    
+        position: relative;
+        background-color: var(--button-color);
+        height: calc(var(--menu-button-width-height) - 2em);
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 1em 1em 1em 1em;
+        animation: reserveColorChange 0.5s linear 1 both;
+      }
+
+      .reservation-text > h1 {
+        font-weight: 100;
+        font-size: 1.7em;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        overflow: hidden;
+      }
+    }
+
+    .reservation-button:active {
+      animation: pressButton 0.2s linear 1 both;
+      .reservation-icon {
+        animation: reverseRingHover 0.2s linear 1 both;
+      }
+
+      .reservation-text {
+        animation: reserveColorChange 0.2s linear 1 both;
+      }
+    }
+
+    .reservation-button:hover {
+      .reservation-icon {
+        animation: ringHover 0.5s linear 1 both;
+      }
+
+      .reservation-text {
+        animation: changeColor 0.5s linear 1 both;
+      }
+    }
+  }
+
+  @keyframes ringHover {
+    to {
+      background-color: var(--ring-hover-color);
+    }
+  }
+
+  @keyframes reverseRingHover {
+    from {
+      background-color: var(--ring-hover-color);
+    }
+    to {
+      background-color: var(--secondary_color);
+    }
+  }
+
+  @keyframes reverseMenuRotation {
+    to {
+      transform: rotateZ(-90deg);
+    }
+  }
+
+  @keyframes menuRotation {
+    from {
+      transform: rotateZ(-90deg);
+    }
+    to {
+      transform: rotateZ(0);
+    }
+  }
+
+  @keyframes hiddenMenuOpen {
+    to {
+      transform: translateX(var(--menu-size));
+    }
+  }
+
+  @keyframes closingMenu {
+    to {
+      transform: translateX(-(var(--menu-size)));
+    }
+  }
+
+  @keyframes openMenu {
+    to {
+      transform: translateX(var(--menu-size));
+    }
+  }
+
+  @keyframes pressButton {
+    100% { 
+      box-shadow: none;
+      transform: scale(0.96);
+    }
+  }
+
+  @keyframes changeColor {
+    0% { background-color: var(--button-color); }
+    100% { background-color: var(--button-hover-color); }
+  }
+
+  @keyframes reserveColorChange {
+    0% { background-color: var(--button-hover-color); }
+    100% { background-color: var(--button-color); }
+  }
+
+  @keyframes menuAnimation {
+    to {
+      transform: translateX(100px);
+    }
+  }
+}
