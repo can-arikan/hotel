@@ -43,7 +43,8 @@ export const MovingCard = (props: {
         return () => {
             window.removeEventListener("resize", marginHandler)
         }
-    })
+        // eslint-disable-next-line
+    }, [])
     return (
         <>
             {
