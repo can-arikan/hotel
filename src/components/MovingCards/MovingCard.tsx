@@ -38,6 +38,7 @@ export const MovingCard = (props: {
             }
             setStyle(style)
         }
+        marginHandler()
         window.addEventListener("resize", marginHandler)
         return () => {
             window.removeEventListener("resize", marginHandler)
