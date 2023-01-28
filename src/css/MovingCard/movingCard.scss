@@ -1,0 +1,104 @@
+.LeftMovingCard, .DefaultMovingCard, .RightMovingCard, .MovingCardText {
+    position: relative;
+    display: flex;
+}
+
+.LeftMovingCard, .RightMovingCard, .DefaultMovingCard {
+    width: 30vw;
+    border-radius: 3%;
+    overflow: hidden;
+}
+
+.MovingCardImageDiv {
+    height: auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.MovingCardImage {
+    max-width: 100%;
+}
+
+.slideLeft {
+    animation: slideLeft 3s ease-in-out 1 forwards;
+    @keyframes slideLeft {
+        0% {
+            transform: translateX(50vw);
+        }
+        100% {
+            transform: translateX(20vw);
+        }
+    }
+}
+
+.slideRight {
+    animation: slideRight 3s ease-in-out 1 forwards;
+    @keyframes slideRight {
+        0% {
+            transform: translateX(-50vw);
+        }
+        100% {
+            transform: translateX(-20vw);
+        }
+    }
+}
+
+.slideLeftMobil {
+    animation: slideLeftMobil 3s ease-in-out 1 forwards;
+    @keyframes slideLeftMobil {
+        0% {
+            transform: translateX(50vw);
+        }
+        100% {
+            transform: translateX(0vw);
+        }
+    }
+}
+
+.slideRightMobil {
+    animation: slideRightMobil 3s ease-in-out 1 forwards;
+    @keyframes slideRightMobil {
+        0% {
+            transform: translateX(-50vw);
+        }
+        100% {
+            transform: translateX(0vw);
+        }
+    }
+}
+
+.LeftMovingCard.Mobil, .RightMovingCard.Mobil {
+    width: 90vw;
+    margin-bottom: 10vh;
+}
+
+.LeftMovingCard {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -20vh;
+    flex-direction: row;
+    .MovingCardText {
+        text-align: right;
+    }
+}
+
+.RightMovingCard {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -20vh;
+    flex-direction: row;
+    .MovingCardText {
+        text-align: left;
+    }
+}
+
+.DefaultMovingCard {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh;
+    flex-direction: column;
+    .MovingCardText {
+        text-align: center;
+    }
+}

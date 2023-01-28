@@ -20,8 +20,8 @@
             display: flex;
             animation: arrowMovement 2s ease-in-out infinite;
             z-index: 1;
-            height: 15em;
-            margin-left: 10%;
+            height: 5em;
+            margin-left: 25%;
             margin-bottom: 2em;
         }
     }
@@ -46,21 +46,53 @@
             display: flex;
 
             .mock-slider {
-                width: calc(var(--slider-image-width) - 0.2em);
-                height: calc(var(--slider-height) - 0.2em);
+                width: calc(var(--slider-image-width) - 0.25em);
+                height: calc(var(--slider-height) - 0.25em);
             }
         }
     }
 
     @keyframes arrowMovement {
         0% {
-            transform: translateY(-1em);
+            transform: translateY(1em);
         }
         50%{
             transform: translateY(0em);
         }
         100%{
-            transform: translateY(-1em);
+            transform: translateY(1em);
         }
+    }
+}
+
+.react-slideshow-container+ul.indicators {
+    display: flex !important;
+    width: 35%;
+    flex-wrap: nowrap !important;
+    justify-content: space-evenly !important;
+    margin-top: 20px !important;
+    align-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.indicator {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    height: var(--indicator-height);
+    width: var(--indicator-width);
+    background-color: #a89db9;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+
+    .inner-indicator {
+        cursor: pointer;
+        height: var(--indicator-height);
+        width: 0;
+        background-color: var(--button-hover-color);
     }
 }
