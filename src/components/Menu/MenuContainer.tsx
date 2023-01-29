@@ -8,16 +8,18 @@ export const MenuContainer = (props: { children: React.ReactNode }) => {
             console.log('yOffset', pageYOffset, 'scrollY', scrollY)
             var position = pageYOffset ? pageYOffset : scrollY
             var menu = document.getElementsByClassName("MenuContainer").item(0)!
-            var hiddenMenu = document.getElementsByClassName("hidden-menu").item(0)!
+            var hiddenMenuContainer = document.getElementsByClassName("hidden-menu-container").item(0)!
             if (position === 0) {
                 if (!menu.classList.contains("ReverseMenuAnimation")) menu.classList.add("ReverseMenuAnimation")
                 if (menu.classList.contains("MenuAnimation")) menu.classList.remove("MenuAnimation")
-                if (hiddenMenu.classList.contains("ReverseHiddenMenuAnimation")) hiddenMenu.classList.remove("ReverseHiddenMenuAnimation")
+                if (!hiddenMenuContainer.classList.contains("hidden-menu-container-animation")) hiddenMenuContainer.classList.add("hidden-menu-container-animation")
+                if (hiddenMenuContainer.classList.contains("hidden-menu-container-reverse-animation")) hiddenMenuContainer.classList.remove("hidden-menu-container-reverse-animation")
             }
             else {
                 if (menu.classList.contains("ReverseMenuAnimation")) menu.classList.remove("ReverseMenuAnimation")
                 if (!menu.classList.contains("MenuAnimation")) menu.classList.add("MenuAnimation")
-                if (!hiddenMenu.classList.contains("ReverseHiddenMenuAnimation")) hiddenMenu.classList.add("ReverseHiddenMenuAnimation")
+                if (hiddenMenuContainer.classList.contains("hidden-menu-container-animation")) hiddenMenuContainer.classList.remove("hidden-menu-container-animation")
+                if (!hiddenMenuContainer.classList.contains("hidden-menu-container-reverse-animation")) hiddenMenuContainer.classList.add("hidden-menu-container-reverse-animation")
             }
         }
         window.addEventListener("scroll", scrollHandler, true);

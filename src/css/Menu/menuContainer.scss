@@ -21,44 +21,69 @@ body {
     }
 
     .MenuAnimation {
-        .hidden-menu {
-            margin-top: 2vh;
-        }
-
         animation: MenuAnimation 1.5s ease-in-out 300ms 1 forwards;
     }
 
     .ReverseMenuAnimation {
         animation: ReverseMenuAnimation 1.5s ease-in-out 1 forwards;
     }
+
+    @keyframes MenuAnimation {
+        0% {
+            opacity: 100%;
+        }
+        100% {
+            opacity: 98%;
+            transform: translateY(-2vh);
+            -webkit-box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
+            box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
+        }
+    }
+    
+    @keyframes ReverseMenuAnimation {
+        0% {
+            transform: translateY(-2vh);
+            opacity: 98%;
+            -webkit-box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
+            box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
+        }
+        100% {
+            opacity: 100%;
+            transform: translateY(0vh);
+            -webkit-box-shadow: 0px 0px 0px 0px;
+            -moz-box-shadow: 0px 0px 0px 0px;
+            box-shadow: 0px 0px 0px 0px;
+        }
+    }
 }
 
-@keyframes MenuAnimation {
-    0% {
-        opacity: 100%;
-    }
-    100% {
-        opacity: 85%;
-        transform: translateY(-2vh);
-        -webkit-box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
-        box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
+.hidden-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: 100vh;
+}
+
+.hidden-menu-container.hidden-menu-container-reverse-animation {
+    animation: HiddenMenuContainerAnimation 1.5s ease-in-out 300ms 1 forwards;
+
+    @keyframes HiddenMenuContainerAnimation {
+        100% {
+            transform: translateY(2vh);
+        }
     }
 }
 
-@keyframes ReverseMenuAnimation {
-    0% {
-        transform: translateY(-2vh);
-        opacity: 85%;
-        -webkit-box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
-        box-shadow: 0px 11px 33px 4px rgba(0,0,0,0.75);
-    }
-    100% {
-        opacity: 100%;
-        transform: translateY(0vh);
-        -webkit-box-shadow: 0px 0px 0px 0px;
-        -moz-box-shadow: 0px 0px 0px 0px;
-        box-shadow: 0px 0px 0px 0px;
+  
+.hidden-menu-container.hidden-menu-container-animation {
+    animation: ReverseHiddenMenuContainerAnimation 1.5s ease-in-out 1 forwards;
+
+    @keyframes ReverseHiddenMenuContainerAnimation {
+        0% {
+            transform: translateY(2vh);
+        }
     }
 }

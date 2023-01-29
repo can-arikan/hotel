@@ -59,13 +59,11 @@ export var openHiddenMenu = (div: React.MouseEvent<HTMLDivElement, MouseEvent>) 
 	var hiddenMenu = document.getElementsByClassName("hidden-menu").item(0)!
 
 	if (hiddenMenu.classList.contains("open-hidden-menu")) {
-		//menu kapama
 		lines.classList.add("menu-line-rotation")
 		lines.classList.remove("reverse-menu-line-rotation")
 		hiddenMenu.classList.remove("open-hidden-menu")
 	}
 	else {
-		//menu acma
 		lines.classList.add("reverse-menu-line-rotation")
 		lines.classList.remove("menu-line-rotation")
 		hiddenMenu.classList.add("open-hidden-menu")
@@ -137,10 +135,8 @@ export function hideTextIfOverflown() {
 
 			menuItemBox.setAttribute("style", "")
 			mediumLine.setAttribute("style", "")
-			// eslint-disable-next-line
-			for (var idx = 0; idx < longLines.length; idx++) {
-				// eslint-disable-next-line
-				var longLine = longLines.item(idx)!
+			for (idx = 0; idx < longLines.length; idx++) {
+				longLine = longLines.item(idx)!
 				longLine.setAttribute("style", "")
 			}
 
