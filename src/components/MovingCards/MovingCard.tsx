@@ -62,11 +62,11 @@ export const MovingCard = (props: {
 const LeftMovingCard = (props: {movingCardData: MovingCardData, index: number, isFirst?: boolean, isLast?: boolean, style: React.CSSProperties}) => {
     return (
         <div className="LeftMovingCard" style={props.style}>
-            <div className="MovingCardText">
-                {props.movingCardData.decription}
-            </div>
             <div className="MovingCardImageDiv">
                 <img alt={"Moving Card " + props.index.toString()} className="MovingCardImage" src={props.movingCardData.img}/>
+            </div>
+            <div className="MovingCardText">
+                {props.movingCardData.decription}
             </div>
         </div>
     )

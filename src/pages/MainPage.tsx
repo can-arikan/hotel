@@ -8,6 +8,7 @@ import { Menu } from '../components/Menu/Menu';
 import { Slider } from '../components/Slider/Slider';
 import { MovingCards } from '../components/MovingCards/MovingCards';
 import { images } from '../utils/images';
+import { MenuContainer } from '../components/Menu/MenuContainer';
 
 function App() {
   useEffect(()=>{
@@ -23,8 +24,16 @@ function App() {
 
   return (
     <div className="App">
-      <PageContainer id="Page1">
+      <MenuContainer>
         <Menu/>
+      </MenuContainer>
+      <div style={{
+        minHeight: "14vh",
+        backgroundColor: "var(--primary_color)",
+        width: "100%",
+        zIndex: "-2"
+      }}/>
+      <PageContainer id="Page1">
         <Slider/>
       </PageContainer>
       <TransitionPage>
@@ -32,6 +41,9 @@ function App() {
       </TransitionPage>
       <PageContainer marginTop='33vh' minWidth='110vh'>
         <MovingCards/>
+      </PageContainer>
+      <PageContainer>
+
       </PageContainer>
     </div>
   );

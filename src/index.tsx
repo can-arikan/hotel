@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './css/menu.scss';
+import './css/Menu/menu.scss';
 import MainPage from './pages/MainPage';
 import reportWebVitals from './dev-tests/reportWebVitals';
 

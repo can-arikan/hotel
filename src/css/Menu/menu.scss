@@ -1,11 +1,12 @@
-@import url('./root.scss');
+@import url('../root.scss');
 
 .menu {    
   width: var(--flex-base);
   display: flex;
   flex-direction: row;
   padding-top: 3em;
-  position: relative;
+  position: sticky;
+  top: 0;
   justify-content: space-between;
   height: 10em !important;
   margin-left: auto;

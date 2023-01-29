@@ -76,20 +76,33 @@
 .LeftMovingCard {
     justify-content: center;
     align-items: center;
-    margin-bottom: -20vh;
-    flex-direction: row;
+    margin-bottom: -15vh;
+    flex-direction: row-reverse;
+    -webkit-box-shadow: 11px -5px 23px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px -5px 23px 4px rgba(0,0,0,0.75);
+    box-shadow: 11px -5px 23px 4px rgba(0,0,0,0.75);
+    padding-left: 2%;
     .MovingCardText {
         text-align: right;
+        margin-right: 3vw;
+    }
+    .MovingCardImageDiv{
+        justify-content: flex-end;
     }
 }
 
 .RightMovingCard {
     justify-content: center;
     align-items: center;
-    margin-bottom: -20vh;
+    margin-bottom: -15vh;
     flex-direction: row;
+    -webkit-box-shadow: -11px -5px 23px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -11px -5px 23px 4px rgba(0,0,0,0.75);
+    box-shadow: -11px -5px 23px 4px rgba(0,0,0,0.75);
+    padding-right: 2%;
     .MovingCardText {
         text-align: left;
+        margin-left: 3vw;
     }
 }
 

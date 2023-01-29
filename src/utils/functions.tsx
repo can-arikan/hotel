@@ -55,20 +55,20 @@ export const movingCardAnimations = () => {
 }
 
 export var openHiddenMenu = (div: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-	var lines = div.currentTarget.getElementsByClassName("menu-lines")
-	var hiddenMenu = document.getElementsByClassName("hidden-menu")
+	var lines = div.currentTarget.getElementsByClassName("menu-lines").item(0)!
+	var hiddenMenu = document.getElementsByClassName("hidden-menu").item(0)!
 
-	if (hiddenMenu.item(0)!.classList.contains("open-hidden-menu")) {
+	if (hiddenMenu.classList.contains("open-hidden-menu")) {
 		//menu kapama
-		lines.item(0)!.classList.add("menu-line-rotation")
-		lines.item(0)!.classList.remove("reverse-menu-line-rotation")
-		hiddenMenu.item(0)!.classList.remove("open-hidden-menu")
+		lines.classList.add("menu-line-rotation")
+		lines.classList.remove("reverse-menu-line-rotation")
+		hiddenMenu.classList.remove("open-hidden-menu")
 	}
 	else {
 		//menu acma
-		lines.item(0)!.classList.add("reverse-menu-line-rotation")
-		lines.item(0)!.classList.remove("menu-line-rotation")
-		hiddenMenu.item(0)!.classList.add("open-hidden-menu")
+		lines.classList.add("reverse-menu-line-rotation")
+		lines.classList.remove("menu-line-rotation")
+		hiddenMenu.classList.add("open-hidden-menu")
 	}
 }
 
@@ -83,6 +83,7 @@ export function hideTextIfOverflown() {
 	var reservationIcon = document.getElementById("reservation-icon")!
 	var leftImageCards = document.getElementsByClassName("LeftMovingCard")
 	var rightImageCards = document.getElementsByClassName("RightMovingCard")
+	var rootSettings = document.getElementById("root")
 
 	if (isOverflownSlider(arrowHolder)) {
 		arrowHolder.getElementsByClassName("arrow").item(0)!.setAttribute("src", images.miniArrow)
@@ -119,6 +120,8 @@ export function hideTextIfOverflown() {
 				rightImageCard?.classList.add("slideRightMobil")
 			}
 		}
+			
+		rootSettings?.setAttribute("style", "overflow-x: clip")
 	}
 	else {
 		if (!isOverflownSlider(arrowHolder)) {
@@ -158,6 +161,8 @@ export function hideTextIfOverflown() {
 					rightImageCard?.classList.remove("slideRightMobil")
 				}
 			}
+
+			rootSettings?.setAttribute("style", "overflow-x: unset")
 		}
 	}
 }

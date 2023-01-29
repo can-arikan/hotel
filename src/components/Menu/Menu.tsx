@@ -4,9 +4,8 @@ import { textsLibrary } from "../../utils/texts"
 
 export const Menu = () => {
     return (
-        <div className='menu'>
-        <div className='hidden-menu'>
-        </div>
+      <div className='menu'>
+        <div className='hidden-menu'/>
         <div className='left-menu'>
           <div className='menu-item-box' onClick={(elem) => openHiddenMenu(elem)}>
             <div className='menu-lines'>
