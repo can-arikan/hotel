@@ -3,13 +3,6 @@ import { images } from "./images";
 
 // UTILITIES
 
-export function isOverflownSlider(element: Element): Boolean {
-	var sliderRect = document.getElementsByClassName("background-slider").item(0)!.getBoundingClientRect()
-	var elemRect = element.getBoundingClientRect()
-	if (elemRect.right >= sliderRect.left) return true;
-	return false;
-}
-
 function isInViewport(element?: Element | null, offset: number = 50): Boolean {
 	if (!element) return false;
 	const top = element.getBoundingClientRect().top;
@@ -17,6 +10,13 @@ function isInViewport(element?: Element | null, offset: number = 50): Boolean {
 }
 
 // Export Functions
+
+export function isOverflownSlider(element: Element): Boolean {
+	var sliderRect = document.getElementsByClassName("background-slider").item(0)!.getBoundingClientRect()
+	var elemRect = element.getBoundingClientRect()
+	if (elemRect.right >= sliderRect.left) return true;
+	return false;
+}
 
 export const movingCardAnimations = () => {
 	var leftCards = document.getElementsByClassName("LeftMovingCard")
@@ -57,16 +57,26 @@ export const movingCardAnimations = () => {
 export var openHiddenMenu = (div: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 	var lines = div.currentTarget.getElementsByClassName("menu-lines").item(0)!
 	var hiddenMenu = document.getElementsByClassName("hidden-menu").item(0)!
+	var hiddenMenuContainer = document.getElementsByClassName("hidden-menu-container").item(0)!
 
 	if (hiddenMenu.classList.contains("open-hidden-menu")) {
 		lines.classList.add("menu-line-rotation")
 		lines.classList.remove("reverse-menu-line-rotation")
 		hiddenMenu.classList.remove("open-hidden-menu")
+		hiddenMenu.classList.add("close-hidden-menu")
+		setTimeout(()=>{
+			hiddenMenuContainer.setAttribute("style", "display: none")
+		}, 800)
 	}
 	else {
 		lines.classList.add("reverse-menu-line-rotation")
 		lines.classList.remove("menu-line-rotation")
 		hiddenMenu.classList.add("open-hidden-menu")
+		hiddenMenu.classList.remove("close-hidden-menu")
+		hiddenMenuContainer.setAttribute("style", "")
+		setTimeout(()=>{
+			hiddenMenuContainer.setAttribute("style", "")
+		}, 800)
 	}
 }
 
@@ -118,7 +128,7 @@ export function hideTextIfOverflown() {
 				rightImageCard?.classList.add("slideRightMobil")
 			}
 		}
-			
+
 		rootSettings?.setAttribute("style", "overflow-x: clip")
 	}
 	else {

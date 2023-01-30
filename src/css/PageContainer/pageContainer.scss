@@ -1,9 +1,9 @@
-@import url('./root.scss');
+@import url('../Root/root.scss');
 
 @font-face {
     font-family: "JanuaryShine";
     src: local("JanuaryShine"),
-        url("../fonts/January\ Shine.ttf") format("truetype");
+        url("../../fonts/January\ Shine.ttf") format("truetype");
     font-weight: bold;
 }
 

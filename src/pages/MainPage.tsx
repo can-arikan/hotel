@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import React, { useEffect, useState } from 'react';
-import '../css/App.css';
-import '../css/slider.scss';
+import '../css/Root/App.css';
+import '../css/Slider/slider.scss';
 import { hideTextIfOverflown } from '../utils/functions';
 import { PageContainer, TransitionPage } from '../components/PageContainer/PageContainer';
 import { Menu } from '../components/Menu/Menu';
@@ -9,6 +9,7 @@ import { Slider } from '../components/Slider/Slider';
 import { MovingCards } from '../components/MovingCards/MovingCards';
 import { images } from '../utils/images';
 import { MenuContainer } from '../components/Menu/MenuContainer';
+import { Restaurants } from '../components/Restaurants/Restaurants';
 
 function App() {
   useEffect(()=>{
@@ -42,8 +43,8 @@ function App() {
       <PageContainer marginTop='33vh' minWidth='110vh'>
         <MovingCards/>
       </PageContainer>
-      <PageContainer>
-
+      <PageContainer zIndex={1}>
+        <Restaurants/>
       </PageContainer>
     </div>
   );

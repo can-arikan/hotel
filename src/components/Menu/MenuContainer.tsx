@@ -5,7 +5,6 @@ export const MenuContainer = (props: { children: React.ReactNode }) => {
     useEffect(()=>{
         const scrollHandler = (e: any) => {
             const { pageYOffset, scrollY } = window;
-            console.log('yOffset', pageYOffset, 'scrollY', scrollY)
             var position = pageYOffset ? pageYOffset : scrollY
             var menu = document.getElementsByClassName("MenuContainer").item(0)!
             var hiddenMenuContainer = document.getElementsByClassName("hidden-menu-container").item(0)!

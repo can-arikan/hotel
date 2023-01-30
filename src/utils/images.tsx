@@ -6,6 +6,7 @@ import arrow from '../images/arrow.png'
 import miniArrow from '../images/mini-arrow.png'
 import transitionPicture from '../images/transition-picture/transition-picture.jpg'
 import shezlong from '../images/card-pictures/shezlong.jpg'
+import cokertme from '../images/foods/cokertme.jpg';
 
 export const images = {
     "logo": logo,
@@ -15,5 +16,6 @@ export const images = {
     "arrow": arrow,
     "miniArrow": miniArrow,
     "transitionImage": transitionPicture,
-    "shezlong": shezlong
+    "shezlong": shezlong,
+    "cokertme": cokertme
 }

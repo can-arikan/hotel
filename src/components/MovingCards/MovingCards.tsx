@@ -1,5 +1,4 @@
 import { MovingCardData } from '../../data-classes/MovingCardData';
-import '../../fonts/January Shine.ttf';
 import { MovingCard } from './MovingCard';
 import { images } from '../../utils/images';
 import { useEffect } from 'react';
@@ -20,9 +19,7 @@ export const MovingCards = () => {
 
     return (
         <>
-            <h1 style={{ "fontFamily": "JanuaryShine", "textAlign": "center", "fontSize": "6em" }}>
-                Aden
-            </h1>
+            <h1 className='titles'>Aden</h1>
             {
                 movingCards.map(
                     (item, i) => {

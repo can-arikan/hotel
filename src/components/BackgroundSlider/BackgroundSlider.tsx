@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { Slide, SlideshowRef } from 'react-slideshow-image';
 import styled, { css, keyframes } from "styled-components";
-import "../../css/slider.scss";
+import "../../css/Slider/slider.scss";
 import 'react-slideshow-image/dist/styles.css';
 
 interface PageProps {

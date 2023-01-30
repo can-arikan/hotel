@@ -1,4 +1,4 @@
-@import url('../root.scss');
+@import url('../Root/root.scss');
 
 .menu {    
   width: var(--flex-base);
@@ -15,12 +15,12 @@
 
   .hidden-menu {
     position: fixed;
-    width: var(--menu-size);
     height: 100vh;
+    width: 100%;
     border: #796794 1px solid;
+    background-color: white;
     top: 0;
-    left: calc(-1 * var(--menu-size));
-    max-width: 45%;
+    left: calc(-1 * var(--menu-size) - 2px);
   }
 
   .menu-logo {
@@ -93,6 +93,10 @@
 
   .open-hidden-menu {
     animation: hiddenMenuOpen 0.5s 0.3s ease-in-out both;
+  }
+
+  .close-hidden-menu {
+    animation: hiddenMenuClose 0.5s 0.3s ease-in-out both;
   }
 
   .action-buttons {
@@ -201,6 +205,15 @@
   @keyframes hiddenMenuOpen {
     to {
       transform: translateX(var(--menu-size));
+    }
+  }
+
+  @keyframes hiddenMenuClose {
+    from {
+      transform: translateX(var(--menu-size));
+    }
+    to {
+      transform: translateX(0);
     }
   }
 
