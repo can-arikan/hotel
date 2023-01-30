@@ -6,7 +6,9 @@ import { images } from "./images";
 function isInViewport(element?: Element | null, offset: number = 50): Boolean {
 	if (!element) return false;
 	const top = element.getBoundingClientRect().top;
-	return (top + offset) >= 0 && (top - offset) <= window.innerHeight;
+	const bottom = element.getBoundingClientRect().bottom;
+	return ((top + offset) >= 0 && (top - offset) <= window.innerHeight) ||
+	(bottom - offset) <= window.innerHeight;
 }
 
 // Export Functions
@@ -75,8 +77,8 @@ export var openHiddenMenu = (div: React.MouseEvent<HTMLDivElement, MouseEvent>) 
 		hiddenMenu.classList.remove("close-hidden-menu")
 		hiddenMenuContainer.setAttribute("style", "")
 		setTimeout(()=>{
-			hiddenMenuContainer.setAttribute("style", "")
-		}, 800)
+			hiddenMenuContainer.setAttribute("style", "display: unset")
+		}, 300)
 	}
 }
 

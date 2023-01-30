@@ -27,30 +27,32 @@
 }
 
 .HiddenRestaurant {
-    display: none;
-}
-
-.OpenHiddenRestaurant {    
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: #7c6a96;
     width: 100%;
     height: 100%;
     overflow-y: hidden;
+    margin-top: -10em;
+}
+
+.OpenHiddenRestaurant {
     animation: openHidden 0.5s ease-in-out 1 both;
 }
 
 @keyframes openHidden {
     100% {
-        transform: translateY(-100%);
+        transform: translateY(100%);
     }
 }
 
 .RestaurantTitle {
-    
+    color: #faa566;
+    font-size: 1.15rem;
 }
 
 .RestaurantIngredients {
-    
+    color: white;
+    font-size: 0.8rem;
 }

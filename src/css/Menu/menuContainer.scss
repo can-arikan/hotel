@@ -64,20 +64,36 @@ body {
     top: 0;
     left: 0;
     height: 100vh;
-    max-width: 55%;
+    max-width: 50%;
     width: var(--menu-size);
+    display: none;
 }
 
-.hidden-menu-container.hidden-menu-container-reverse-animation {
-    animation: HiddenMenuContainerAnimation 1.5s ease-in-out 300ms 1 forwards;
+.hidden-menu-container.hidden-menu-container-reverse-animation-when-not-top {
+    animation: HiddenMenuContainerAnimationWhenNotTop 1.5s ease-in-out 300ms 1 forwards;
 
-    @keyframes HiddenMenuContainerAnimation {
+    @keyframes HiddenMenuContainerAnimationWhenNotTop {
+        0% {
+            transform: translateY(2vh);
+        }
         100% {
             transform: translateY(2vh);
         }
     }
 }
 
+.hidden-menu-container.hidden-menu-container-reverse-animation {
+    animation: HiddenMenuContainerAnimation 1.5s ease-in-out 300ms 1 forwards;
+
+    @keyframes HiddenMenuContainerAnimation {
+        0% {
+            transform: translateY(0vh);
+        }
+        100% {
+            transform: translateY(2vh);
+        }
+    }
+}
   
 .hidden-menu-container.hidden-menu-container-animation {
     animation: ReverseHiddenMenuContainerAnimation 1.5s ease-in-out 1 forwards;
